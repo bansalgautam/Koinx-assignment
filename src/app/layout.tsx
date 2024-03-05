@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-[#EFF2F5] antialiased",
+          "bg-[#EFF2F5] antialiased overflow-x-hidden",
           inter.className
         )}
       >

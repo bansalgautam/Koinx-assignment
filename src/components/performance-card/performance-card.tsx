@@ -124,8 +124,8 @@ const PerformanceCard = ({
             <PriceRange current={price} low={low} high={high} type="52W" />
           </div>
           <div className="pt-12">
-            <div className="flex gap-2 items-center text-muted-foreground">
-              <h1 className="text-xl font-semibold">Fundamentals</h1>
+            <div className="text-xl flex gap-2 items-center text-muted-foreground">
+              <h1 className="font-semibold">Fundamentals</h1>
               <IoIosInformationCircle />
             </div>
             <div className="flex md:gap-16 flex-col md:flex-row">
