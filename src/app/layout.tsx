@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header/header";
+import SideCard from "@/components/side-card/side-card";
+import TrendingCoins from "@/components/trending-coins/trending-coins";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-[#EFF2F5] antialiased", inter.className)}>
+      <body className={cn("bg-[#EFF2F5] antialiased overflow-x-hidden", inter.className)}>
         <Header />
-        {children}
+        <div className="py-4 px-2 max-w-[1368px] mx-auto flex w-full gap-4">
+          <div className="flex-1 md:flex-[7]">{children}</div>
+          <div className="hidden md:flex flex-[3] flex-col gap-4">
+            <SideCard />
+            <TrendingCoins />
+          </div>
+        </div>
       </body>
     </html>
   );
