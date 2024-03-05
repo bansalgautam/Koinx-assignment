@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 import PriceRange from "../price-range/price-range";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { IoIosInformationCircle } from "react-icons/io";
+import AllTime from "../all-time";
 
 const PerformanceCard = ({
   price,
@@ -16,6 +17,8 @@ const PerformanceCard = ({
   rank,
   ath,
   atl,
+  athd,
+  atld,
 }: {
   price: number;
   low: number;
@@ -26,6 +29,8 @@ const PerformanceCard = ({
   rank: number;
   ath: number;
   atl: number;
+  athd: Date;
+  atld: Date;
 }) => {
   const [selected, setSelected] = useState(0);
 
@@ -80,11 +85,15 @@ const PerformanceCard = ({
     },
     {
       name: "All Time High",
-      value: `$${formatNumberWithCommas(ath, "USD")}`,
+      value: ath,
+      type: "AT",
+      date: athd,
     },
     {
       name: "All Time Low",
-      value: `$${formatNumberWithCommas(atl, "USD")}`,
+      value: atl,
+      type: "AT",
+      date: atld,
     },
   ];
   return (
@@ -108,7 +117,7 @@ const PerformanceCard = ({
         </div>
       </div>
       <Card>
-        <CardHeader className="text-xl font-bold">Performance</CardHeader>
+        <CardHeader className="text-xl font-semibold">Performance</CardHeader>
         <CardContent>
           <div className="gap-4 flex flex-col">
             <PriceRange current={price} low={low} high={high} type="Today's" />
@@ -129,7 +138,7 @@ const PerformanceCard = ({
                     <h3 className="text-muted-foreground">
                       {fundamental.name}
                     </h3>
-                    <div>{fundamental.value}</div>
+                    <div className="font-semibold">{fundamental.value}</div>
                   </div>
                 ))}
               </div>
@@ -142,7 +151,16 @@ const PerformanceCard = ({
                     <h3 className="text-muted-foreground">
                       {fundamental.name}
                     </h3>
-                    <div>{fundamental.value}</div>
+                    {fundamental.type !== "AT" && (
+                      <div className="font-semibold">{fundamental.value}</div>
+                    )}
+                    {fundamental.type === "AT" && (
+                      <AllTime
+                        curr={price}
+                        given={fundamental.value}
+                        date={fundamental.date}
+                      />
+                    )}
                   </div>
                 ))}
               </div>

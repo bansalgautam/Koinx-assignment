@@ -3,6 +3,7 @@
 import BreadCrumbs from "@/components/breadcrumbs/breadcrumbs";
 import PerformanceCard from "@/components/performance-card/performance-card";
 import PriceChart from "@/components/price-chart/price-chart";
+import SentimentsCard from "@/components/sentiments-card/sentiments-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
@@ -43,7 +44,10 @@ const CryptoPage = () => {
             rank={data.market_data.market_cap_rank}
             ath={data.market_data.ath.usd}
             atl={data.market_data.atl.usd}
+            athd={data.market_data.ath_date.usd}
+            atld={data.market_data.atl_date.usd}
           />
+          <SentimentsCard />
         </>
       )}
     </main>
