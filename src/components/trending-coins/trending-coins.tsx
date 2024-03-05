@@ -2,13 +2,13 @@ import { IoCaretDownSharp, IoCaretUpSharp } from "react-icons/io5";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const getTrendingCoins = async () => {
   const response = await fetch(
     "https://api.coingecko.com/api/v3/search/trending"
   );
   const data = await response.json();
-
   return data.coins.slice(0, 3);
 };
 
@@ -21,7 +21,11 @@ const TrendingCoins = async () => {
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         {coins.map((coin: any, index: number) => (
-          <div className="flex justify-between items-center" key={index}>
+          <Link
+            href={`/cryptocurrencies/${coin.item.id}`}
+            className="flex justify-between items-center"
+            key={index}
+          >
             <div className="font-medium flex  gap-2 items-center">
               <div className="w-[30px] h-[30px] relative">
                 <Image
@@ -58,7 +62,7 @@ const TrendingCoins = async () => {
                     ].toFixed(2)}
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </CardContent>
     </Card>
