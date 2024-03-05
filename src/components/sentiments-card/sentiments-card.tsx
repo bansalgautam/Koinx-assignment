@@ -1,5 +1,13 @@
 import { IoIosInformationCircle } from "react-icons/io";
 import { Card, CardContent, CardHeader } from "../ui/card";
+import EventCard from "../event-card/event-card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
 
 const SentimentsCard = () => {
   return (
@@ -10,6 +18,22 @@ const SentimentsCard = () => {
           <h1 className="font-semibold">Key Events</h1>
           <IoIosInformationCircle />
         </div>
+        <Carousel opts={{ align: "start" }} className="py-8">
+          <CarouselContent>
+            <CarouselItem className="basis-[90%] md:basis-[70%]">
+              <EventCard />
+            </CarouselItem>
+            <CarouselItem className="basis-[90%] md:basis-[70%]">
+              <EventCard />
+            </CarouselItem>
+            <CarouselItem className="basis-[90%] md:basis-[70%]">
+              <EventCard />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className="-left-4" />
+          <CarouselNext className="-right-4" />
+        </Carousel>
+
         <div className="flex gap-2 items-center text-muted-foreground text-lg">
           <h1 className="font-semibold">Analyst Estimates</h1>
           <IoIosInformationCircle />

@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const Header = () => {
   return (
-    <nav className="min-w-[100vw] bg-background sticky top-0 z-10">
+    <nav className="w-screen bg-background sticky top-0 z-10">
       <div className="max-w-[1368px] mx-auto px-2 flex items-center">
         <div className="flex-1">
           <Link href={"/"}>

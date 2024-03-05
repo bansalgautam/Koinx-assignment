@@ -18,7 +18,7 @@ const TrendingCoins = async () => {
       <CardHeader className="text-xl font-semibold">
         Trending Coins (24h)
       </CardHeader>
-      <CardContent className="flex flex-col gap-4">
+      <CardContent className="flex flex-col gap-10">
         {coins.map((coin: any, index: number) => (
           <Link
             href={`/cryptocurrencies/${coin.item.id}`}
