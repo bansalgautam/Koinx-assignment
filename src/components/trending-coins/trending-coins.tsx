@@ -1,8 +1,7 @@
-import { IoCaretDownSharp, IoCaretUpSharp } from "react-icons/io5";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
+import PriceChange from "../price-change/price-change";
 
 const getTrendingCoins = async () => {
   const response = await fetch(
@@ -32,36 +31,20 @@ const TrendingCoins = async () => {
                   src={coin.item.thumb}
                   alt={coin.item.name}
                   fill
+                  sizes="30px"
                   className="mx-auto object-contain"
                 />
               </div>
               <div>
-                {coin.item.name}({coin.item.symbol})
+                {coin.item.name.length > 20
+                  ? coin.item.name.split("").slice(0, 15).join("").concat("...")
+                  : coin.item.name}
+                ({coin.item.symbol})
               </div>
             </div>
-            <div
-              className={cn(
-                "flex  p-1 px-2 items-center gap-1 text-sm h-max",
-                coin.item.data["price_change_percentage_24h"]["inr"] < 0
-                  ? "text-[#f00] bg-[#FEEFEE]"
-                  : "text-[#14B079] bg-[#EAF9F5]"
-              )}
-            >
-              {coin.item.data["price_change_percentage_24h"]["inr"] < 0 ? (
-                <IoCaretDownSharp color="#f00" />
-              ) : (
-                <IoCaretUpSharp color={"#14B079"} />
-              )}
-              <span>
-                {coin.item.data["price_change_percentage_24h"]["inr"] < 0
-                  ? -coin.item.data["price_change_percentage_24h"][
-                      "inr"
-                    ].toFixed(2)
-                  : coin.item.data["price_change_percentage_24h"][
-                      "inr"
-                    ].toFixed(2)}
-              </span>
-            </div>
+            <PriceChange
+              change={coin.item.data["price_change_percentage_24h"]["inr"]}
+            />
           </Link>
         ))}
       </CardContent>
