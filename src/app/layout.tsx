@@ -20,9 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-[#EFF2F5] antialiased overflow-x-hidden scroll-smooth", inter.className)}>
+      <body
+        className={cn(
+          "bg-[#EFF2F5] antialiased",
+          inter.className
+        )}
+      >
         <Header />
-        <div className="py-4 px-2 max-w-[1368px] mx-auto flex w-full gap-4">
+        <div className="py-4 md:px-2 max-w-[1368px] md:mx-auto flex w-[100vw] gap-4">
           <div className="flex-1 md:flex-[7]">{children}</div>
           <div className="hidden lg:flex flex-[3] flex-col gap-4 py-9">
             <SideCard />

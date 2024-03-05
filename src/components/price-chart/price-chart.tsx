@@ -34,7 +34,7 @@ const PriceChart = ({
           Rank #{rank}
         </div>
       </div>
-      <Card>
+      <Card className="w-[100%]">
         <CardHeader>
           <div className="hidden md:flex flex-row gap-2 items-center">
             <Image src={image} alt={name} width={40} height={40} />

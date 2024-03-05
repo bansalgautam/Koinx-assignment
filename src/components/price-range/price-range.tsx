@@ -15,7 +15,6 @@ const PriceRange = ({
   const range = high - low;
   const currentRange = current - low;
   const percent = (currentRange / range) * 100;
-  console.log(percent);
 
   return (
     <div className="flex gap-4 items-center justify-between">
@@ -25,7 +24,7 @@ const PriceRange = ({
       </div>
       <div className="h-[5px] w-[40%] md:w-[50%] rounded-full range relative">
         <div
-          className={cn("absolute flex flex-col items-center top-1")}
+          className={cn("absolute flex flex-col items-start top-1")}
           style={{ left: `${percent}%` }}
         >
           <IoCaretUpSharp />

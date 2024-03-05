@@ -37,6 +37,12 @@ const CryptoPage = () => {
             price={data.market_data.current_price.usd}
             low={data.market_data.low_24h.usd}
             high={data.market_data.high_24h.usd}
+            cap={data.market_data.market_cap.usd}
+            name={data.name}
+            volume={data.market_data.total_volume.usd}
+            rank={data.market_data.market_cap_rank}
+            ath={data.market_data.ath.usd}
+            atl={data.market_data.atl.usd}
           />
         </>
       )}
