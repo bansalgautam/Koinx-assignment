@@ -34,7 +34,7 @@ function TradingViewWidget({ token }: { token: string }) {
 
   return (
     <div
-      className="tradingview-widget-container w-full aspect-square md:aspect-[16/9]"
+      className="tradingview-widget-container max-w-full aspect-square md:aspect-[16/9]"
       ref={container}
     ></div>
   );

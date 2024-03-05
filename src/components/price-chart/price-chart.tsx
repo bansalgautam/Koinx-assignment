@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 import PriceChange from "../price-change/price-change";
 import { Separator } from "@radix-ui/react-separator";
 import TradingViewWidget from "../trading-chart";
+import { formatNumberWithCommas } from "@/lib/utils";
 
 interface PriceChartProps {
   image: string;
@@ -48,9 +49,9 @@ const PriceChart = ({
           <div className="flex flex-row gap-8 items-start">
             <div className="flex flex-col gap-1">
               <div className="text-2xl font-semibold">
-                ${usd_price.toFixed(2)}
+                ${formatNumberWithCommas(usd_price, "USD")}
               </div>
-              <div className="text-sm">&#8377;{inr_price.toFixed(2)}</div>
+              <div className="text-sm">&#8377;{formatNumberWithCommas(inr_price, "INR")}</div>
             </div>
             <div className="flex gap-4 items-center">
               <PriceChange change={change} />

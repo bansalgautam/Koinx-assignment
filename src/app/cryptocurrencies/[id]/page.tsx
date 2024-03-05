@@ -1,6 +1,7 @@
 "use client";
 
 import BreadCrumbs from "@/components/breadcrumbs/breadcrumbs";
+import PerformanceCard from "@/components/performance-card/performance-card";
 import PriceChart from "@/components/price-chart/price-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePathname } from "next/navigation";
@@ -22,15 +23,22 @@ const CryptoPage = () => {
       {isLoading && <Skeleton className="h-screen w-full" />}
       {error && <div>Error fetching data</div>}
       {data && (
-        <PriceChart
-          change={data.market_data.price_change_percentage_24h}
-          image={data.image.large}
-          inr_price={data.market_data.current_price.inr}
-          name={data.name}
-          rank={data.market_data.market_cap_rank}
-          symbol={data.symbol}
-          usd_price={data.market_data.current_price.usd}
-        />
+        <>
+          <PriceChart
+            change={data.market_data.price_change_percentage_24h}
+            image={data.image.large}
+            inr_price={data.market_data.current_price.inr}
+            name={data.name}
+            rank={data.market_data.market_cap_rank}
+            symbol={data.symbol}
+            usd_price={data.market_data.current_price.usd}
+          />
+          <PerformanceCard
+            price={data.market_data.current_price.usd}
+            low={data.market_data.low_24h.usd}
+            high={data.market_data.high_24h.usd}
+          />
+        </>
       )}
     </main>
   );
