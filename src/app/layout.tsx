@@ -27,9 +27,9 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <div className="py-4 md:px-2 max-w-[1368px] md:mx-auto flex w-[100vw] gap-4">
+        <div className="py-4 md:px-2 max-w-[1368px] md:mx-auto flex flex-col lg:flex-row w-[100vw] gap-4">
           <div className="flex-1 md:flex-[7]">{children}</div>
-          <div className="hidden lg:flex flex-[3] flex-col gap-4 py-9">
+          <div className="flex flex-1 lg:flex-[3] flex-col gap-4 py-9">
             <SideCard />
             <TrendingCoins />
           </div>

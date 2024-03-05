@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 
 const SentimentsCard = () => {
   return (
-    <Card>
+    <Card className="w-[95%] md:w-full mx-auto">
       <CardHeader className="text-xl font-semibold">Sentiment</CardHeader>
       <CardContent>
         <div className="flex gap-2 items-center text-muted-foreground text-lg">

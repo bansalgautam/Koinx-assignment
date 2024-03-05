@@ -98,7 +98,7 @@ const PerformanceCard = ({
   ];
   return (
     <>
-      <div className="max-w-[100vw] overflow-hidden">
+      <div className="w-[95%] md:w-full mx-auto overflow-hidden">
         <div className="max-w-full overflow-scroll no-scrollbar py-2 border-b border-[#c7c7c7] flex gap-4 text-nowrap">
           {items.map((item, index) => (
             <div
@@ -116,7 +116,7 @@ const PerformanceCard = ({
           ))}
         </div>
       </div>
-      <Card>
+      <Card className="w-[95%] md:w-full mx-auto">
         <CardHeader className="text-xl font-semibold">Performance</CardHeader>
         <CardContent>
           <div className="gap-4 flex flex-col">

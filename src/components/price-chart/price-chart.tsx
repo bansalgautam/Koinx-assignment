@@ -26,7 +26,7 @@ const PriceChart = ({
 }: PriceChartProps) => {
   return (
     <>
-      <div className="flex md:hidden flex-row gap-2 items-center">
+      <div className="flex md:hidden flex-row gap-2 items-center  w-[95%] md:w-full mx-auto">
         <Image src={image} alt={name} width={40} height={40} />
         <h1 className="font-semibold text-xl">{name}</h1>
         <h2 className="uppercase text-muted-foreground">{symbol}</h2>
@@ -34,7 +34,7 @@ const PriceChart = ({
           Rank #{rank}
         </div>
       </div>
-      <Card className="w-[100%]">
+      <Card className="w-[95%] md:w-full mx-auto">
         <CardHeader>
           <div className="hidden md:flex flex-row gap-2 items-center">
             <Image src={image} alt={name} width={40} height={40} />
@@ -51,7 +51,9 @@ const PriceChart = ({
               <div className="text-2xl font-semibold">
                 ${formatNumberWithCommas(usd_price, "USD")}
               </div>
-              <div className="text-sm">&#8377;{formatNumberWithCommas(inr_price, "INR")}</div>
+              <div className="text-sm">
+                &#8377;{formatNumberWithCommas(inr_price, "INR")}
+              </div>
             </div>
             <div className="flex gap-4 items-center">
               <PriceChange change={change} />

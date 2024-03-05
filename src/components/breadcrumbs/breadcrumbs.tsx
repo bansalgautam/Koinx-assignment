@@ -5,7 +5,7 @@ const BreadCrumbs = ({ pathname }: { pathname: string }) => {
   const paths = pathname.split("/").filter((path) => path !== "");
 
   return (
-    <div className="flex text-sm">
+    <div className="flex text-sm w-[95%] md:w-full mx-auto">
       {paths.map((path, index) => (
         <div
           key={index}

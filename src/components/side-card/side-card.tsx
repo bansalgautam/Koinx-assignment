@@ -5,7 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const SideCard = () => {
   return (
-    <Card className="text-center bg-gradient-to-b from-[#2871EB] to-[#1A4BEF] text-background px-8">
+    <Card className="text-center bg-gradient-to-b from-[#2871EB] to-[#1A4BEF] text-background px-8 w-[95%] md:w-full mx-auto">
       <CardHeader className="text-xl font-bold">
         Get Started with KoinX for FREE
       </CardHeader>

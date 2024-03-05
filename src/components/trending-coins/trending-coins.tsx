@@ -14,7 +14,7 @@ const getTrendingCoins = async () => {
 const TrendingCoins = async () => {
   const coins = await getTrendingCoins();
   return (
-    <Card>
+    <Card className="w-[95%] md:w-full mx-auto">
       <CardHeader className="text-xl font-semibold">
         Trending Coins (24h)
       </CardHeader>
