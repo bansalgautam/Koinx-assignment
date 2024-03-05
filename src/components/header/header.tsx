@@ -9,9 +9,11 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 const Header = () => {
   return (
     <nav className="w-screen bg-background">
-      <div className="max-w-[1300px] mx-auto px-2 flex items-center">
+      <div className="max-w-[1368px] mx-auto px-2 flex items-center">
         <div className="flex-1">
-          <Logo className="size-16 md:size-20" />
+          <Link href={"/"}>
+            <Logo className="size-16 md:size-20" />
+          </Link>
         </div>
         <div className="flex-1 hidden md:flex justify-end">
           <Button variant={"link"} className="text-md" asChild>
