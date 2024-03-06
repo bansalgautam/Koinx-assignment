@@ -20,7 +20,7 @@ const FooterSection = async () => {
             {coins.map((item: any) => (
               <CarouselItem
                 key={item.item.id}
-                className="basis-1/2 lg:basis-1/4 pl-4"
+                className="sm:basis-1/2 lg:basis-1/4 pl-4"
               >
                 <CoinCard
                   src={item.item.thumb}
@@ -44,7 +44,7 @@ const FooterSection = async () => {
             {coins.map((item: any) => (
               <CarouselItem
                 key={item.item.id}
-                className="basis-1/2 lg:basis-1/4 pl-4"
+                className="sm:basis-1/2 lg:basis-1/4 pl-4"
               >
                 <CoinCard
                   src={item.item.thumb}
