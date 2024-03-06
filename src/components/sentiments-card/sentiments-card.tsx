@@ -44,7 +44,7 @@ const SentimentsCard = () => {
           </div>
           <div className="text-muted-foreground flex flex-1 flex-col gap-2">
             <div className="flex items-center gap-4">
-              <div>Buy</div>
+              <div className="w-[60px]">Buy</div>
               <div className="w-full flex gap-4 items-center">
                 <div className="w-[76%] h-[5px] bg-[#14B079] rounded-full" />
                 <div>76%</div>
@@ -52,7 +52,7 @@ const SentimentsCard = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <div>Hold</div>
+              <div className="w-[60px]">Hold</div>
               <div className="w-full flex gap-4 items-center">
                 <div className="w-[8%] h-[5px] bg-[#c7c7c7] rounded-full" />
                 <div>8%</div>
@@ -60,7 +60,7 @@ const SentimentsCard = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <div>Sell</div>
+              <div className="w-[60px]">Sell</div>
               <div className="w-full flex gap-4 items-center">
                 <div className="w-[16%] h-[5px] bg-[#f00] rounded-full" />
                 <div>16%</div>

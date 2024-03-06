@@ -1,5 +1,6 @@
 "use client";
 
+import AboutCard from "@/components/about-card/about-card";
 import BreadCrumbs from "@/components/breadcrumbs/breadcrumbs";
 import PerformanceCard from "@/components/performance-card/performance-card";
 import PriceChart from "@/components/price-chart/price-chart";
@@ -48,6 +49,7 @@ const CryptoPage = () => {
             atld={data.market_data.atl_date.usd}
           />
           <SentimentsCard />
+          <AboutCard name={data.name} desc={data.description.en} />
         </>
       )}
     </main>
