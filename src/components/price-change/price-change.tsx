@@ -14,7 +14,7 @@ const PriceChange = ({ change }: { change: number }) => {
       ) : (
         <IoCaretUpSharp color={"#14B079"} />
       )}
-      <span>{change < 0 ? -change.toFixed(2) : change.toFixed(2)}</span>
+      <span>{change < 0 ? -change.toFixed(2) : change.toFixed(2)}%</span>
     </div>
   );
 };
