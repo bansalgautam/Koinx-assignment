@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 
 const TeamCard = () => {
   return (
-    <Card>
+    <Card className="w-[95%] md:w-[100%] mx-auto">
       <CardHeader className="text-xl font-semibold">Team</CardHeader>
       <CardContent className="flex flex-col gap-4">
         <p className="text-justify leading-6">

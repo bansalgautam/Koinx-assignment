@@ -1,11 +1,10 @@
-import { DOMAttributes } from "react";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Separator } from "@radix-ui/react-separator";
 import ComponentCard from "./component-card";
 
 const AboutCard = ({ name, desc }: { name: string; desc: string }) => {
   return (
-    <Card>
+    <Card className="w-[95%] md:w-[100%] mx-auto">
       <CardHeader className="text-xl font-semibold">About {name}</CardHeader>
       <CardContent>
         <div className="flex flex-col gap-2">
