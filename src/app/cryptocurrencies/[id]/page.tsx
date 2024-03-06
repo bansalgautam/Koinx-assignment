@@ -5,6 +5,7 @@ import BreadCrumbs from "@/components/breadcrumbs/breadcrumbs";
 import PerformanceCard from "@/components/performance-card/performance-card";
 import PriceChart from "@/components/price-chart/price-chart";
 import SentimentsCard from "@/components/sentiments-card/sentiments-card";
+import TokenomicsCard from "@/components/tokenomics-card/tokenomics-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
@@ -50,6 +51,7 @@ const CryptoPage = () => {
           />
           <SentimentsCard />
           <AboutCard name={data.name} desc={data.description.en} />
+          <TokenomicsCard />
         </>
       )}
     </main>
