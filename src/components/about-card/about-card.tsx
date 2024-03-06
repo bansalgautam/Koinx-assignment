@@ -42,7 +42,7 @@ const AboutCard = ({ name, desc }: { name: string; desc: string }) => {
           <ComponentCard
             className="flex-1 from-[#78EEA5] to-[#105FAD]"
             text="Calculate your Profits"
-            src="/investing.avif"
+            src="/investing.jpg"
           />
           <ComponentCard
             className="flex-1 from-[#ff9665] to-[#f13b37]"

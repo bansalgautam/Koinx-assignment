@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/header/header";
 import SideCard from "@/components/side-card/side-card";
 import TrendingCoins from "@/components/trending-coins/trending-coins";
+import FooterSection from "@/components/footer-section/footer-section";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             <TrendingCoins />
           </div>
         </div>
+        <FooterSection />
       </body>
     </html>
   );

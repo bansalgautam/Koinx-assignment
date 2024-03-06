@@ -3,16 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import PriceChange from "../price-change/price-change";
 
-const getTrendingCoins = async () => {
+export const getTrendingCoins = async () => {
   const response = await fetch(
     "https://api.coingecko.com/api/v3/search/trending"
   );
   const data = await response.json();
-  return data.coins.slice(0, 3);
+  return data.coins;
 };
 
 const TrendingCoins = async () => {
-  const coins = await getTrendingCoins();
+  const res = await getTrendingCoins();
+  const coins = await res.slice(0, 3);
   return (
     <Card className="w-[95%] md:w-full mx-auto">
       <CardHeader className="text-xl font-semibold">
